@@ -19,9 +19,9 @@ Critères de validation n°3 : Afficher une page de bienvenue.
     Le méthode index() du contrôleur se finit par un $this->render('path_vers_un_twig');.
     Le fichier Twig default.html.twig étend base.html.twig et comprend un titre h1 "Bienvenue sur mon blog".
     L'URL http://localhost:8000/ est fonctionnelle, le titre s'affiche. :)
-
+    
+    
 Critères de validation n°4 : Le routing avancé .
-
 
     La route est correctement définie, en annotations, et est reliée à la méthode show() de BlogController.
     Une vue templates/blog/show.html.twig est créée.
@@ -30,4 +30,13 @@ Critères de validation n°4 : Le routing avancé .
     La route blog/show/ affiche bien une vue avec "Article Sans Titre" dans un <h1>.
     La route blog/show/MonArticle n'affiche rien (erreur 404) car le paramètre contient des majuscules.
     La route blog/show/mon_article n'affiche rien (erreur 404) car le paramètre contient un underscore.
+    
+    
+Critères de validation n°5 : Créer ta première entité avec Doctrine.
+
+    Lance la commande doctrine:mapping:info, le résultat affiche bien les deux entités Category et Article.
+    Lance la commande doctrine:schema:validate, le résultat affiche bien OK pour le mapping ET la base de données.
+    Ton code devra être disponible sur un repository GitHub.
+
+
 

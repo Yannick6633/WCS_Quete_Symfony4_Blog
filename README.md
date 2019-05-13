@@ -20,3 +20,14 @@ Critères de validation n°3 : Afficher une page de bienvenue.
     Le fichier Twig default.html.twig étend base.html.twig et comprend un titre h1 "Bienvenue sur mon blog".
     L'URL http://localhost:8000/ est fonctionnelle, le titre s'affiche. :)
 
+Critères de validation n°4 : Le routing avancé .
+
+
+    La route est correctement définie, en annotations, et est reliée à la méthode show() de BlogController.
+    Une vue templates/blog/show.html.twig est créée.
+    La route blog/show/mon-super-article affiche bien une vue avec en titre "Mon Super Article" dans un <h1>.
+    La route blog/show/article-du-1-janvier-1970 affiche bien une vue avec en titre "Article Du 1 Janvier 1970" dans un <h1>.
+    La route blog/show/ affiche bien une vue avec "Article Sans Titre" dans un <h1>.
+    La route blog/show/MonArticle n'affiche rien (erreur 404) car le paramètre contient des majuscules.
+    La route blog/show/mon_article n'affiche rien (erreur 404) car le paramètre contient un underscore.
+

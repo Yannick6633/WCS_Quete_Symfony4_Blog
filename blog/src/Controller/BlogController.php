@@ -49,6 +49,7 @@ class BlogController extends AbstractController
      * @Route("/{slug<^[a-z0-9-]+$>}",
      *      defaults={"slug" = null},
      *      name="blog_show")
+     *
      * @return Response A response instance
      */
 
@@ -87,6 +88,8 @@ class BlogController extends AbstractController
 
     /**
      * @Route("/category/{categoryName}", name="show_category")
+     *
+     * @return Response A response instance
      */
 
     public function ShowByCategory(string $categoryName)

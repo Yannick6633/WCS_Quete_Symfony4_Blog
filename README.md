@@ -39,4 +39,29 @@ Critères de validation n°5 : Créer ta première entité avec Doctrine.
     Ton code devra être disponible sur un repository GitHub.
 
 
+Critères de validation n°6 : Crée la relation ManyToOne.
+
+    La propriété category est présente et privée.
+    Le getter et setter correspondants sont présents et publics.
+    Les annotations ManyToOne et JoinColumn sont présentes et correctement paramétrées (nullable=false, targetEntity)
+    Le use nécessaire pour les annotations @ORM est en place.
+    Ton code devra être disponible sur un repository GitHub.
+    
+    
+Critères de validation n°7 : Récupérer des données stockées avec Doctrine.
+    
+    FindBy() : récupérer plusieurs objets avec des filtres
+    
+        Une nouvelle méthode showByCategory(string $categoryName) a été créée dans le controller BlogController.
+        La route de cette méthode sera sous la forme : @Route("/category/{category}", name="show_category").
+        Cette méthode retourne un tableau d'articles récupéré par une méthode de type findBy(), en limitant le nombre de résultats à 3, le tout trié par id décroissant.
+        Un nouveau fichier a été créé templates/blog/category.html.twig.
+        Ce fichier bouclera sur tous les articles afin d'afficher l'id, le titre et le contenu de chaque itération.
+        L'URL http://localhost:8000/blog/category/javascript est fonctionnelle et renvoie bien tous les articles liés à la catégorie Javascript, ajoutée en début de quête.
+        Ton code devra être disponible sur un repository GitHub
+    
+
+
+
+
 

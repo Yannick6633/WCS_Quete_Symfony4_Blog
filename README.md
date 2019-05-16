@@ -60,6 +60,17 @@ Critères de validation n°7 : Récupérer des données stockées avec Doctrine.
         L'URL http://localhost:8000/blog/category/javascript est fonctionnelle et renvoie bien tous les articles liés à la catégorie Javascript, ajoutée en début de quête.
         Ton code devra être disponible sur un repository GitHub
     
+    
+Critères de validation n°8 : Les relations bidirectionnelles avec Doctrine
+
+    Rendre la quête avec un repository GitHub
+    Avoir les deux classes Article et Category
+    Les annotations inversedBy et mappedBy sont présentes
+    Les méthodes addArticle() et removeArticle() sont présentes dans la classe Category
+    Utiliser les méthodes getArticles() et getCategory()
+
+
+
 
 
 

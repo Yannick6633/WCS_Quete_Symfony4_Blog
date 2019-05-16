@@ -68,6 +68,15 @@ Critères de validation n°8 : Les relations bidirectionnelles avec Doctrine
     Les annotations inversedBy et mappedBy sont présentes
     Les méthodes addArticle() et removeArticle() sont présentes dans la classe Category
     Utiliser les méthodes getArticles() et getCategory()
+    
+    
+Critères de validation n°9 : Le param converter.
+
+        Dans blogController, la méthode showByCategory() permet de récupérer un objet Category via le param converter, à partir d'un name en paramètre de route,
+    Dans showByCategory(), les articles associés à la categorie sont toujours récupérés par l’appel à $category->getArticles();,
+    La méthode rend une vue affichant le nom de la catégorie et ses articles associés.
+
+
 
 
 

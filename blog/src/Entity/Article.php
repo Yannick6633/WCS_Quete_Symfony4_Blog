@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -9,28 +10,36 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Article
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
+
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+
     private $title;
 
     /**
      * @ORM\Column(type="text")
      */
+
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */
+
     private $category;
+
+    //getters and setters
+
 
     public function getId(): ?int
     {
@@ -72,4 +81,8 @@ class Article
 
         return $this;
     }
+
+
 }
+
+

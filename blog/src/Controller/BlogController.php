@@ -7,7 +7,10 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Form\ArticleSearchType;
+use App\Form\CategoryType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,11 +24,14 @@ class BlogController extends AbstractController
      * Show all row from article's entity
      *
      * @Route("/", name="blog_index")
+     * @param $articles
      * @return Response A response instance
      */
 
-    public function index(): Response
+    public function index(Request $request): Response
     {
+
+
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findAll();
@@ -36,8 +42,33 @@ class BlogController extends AbstractController
             );
         }
 
+        $form = $this->createForm(
+            ArticleSearchType::class,
+            null,
+            ['method' => Request::METHOD_GET]
+        );
+
+       $category = new Category();
+
+
+       $formCategory = $this->createForm(CategoryType::class, $category);
+
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            $data = $form->getData();
+
+            // $data contient les données du $_POST
+            // Faire une recherche dans la BDD avec les infos de $data...
+        }
+
+
         return $this->render('blog/index.html.twig',
-            ['articles' => $articles]
+            ['articles' => $articles,
+                'form' => $form->createView(),
+                'formCategory' => $formCategory->createView(),
+            ]
         );
     }
 
@@ -89,6 +120,7 @@ class BlogController extends AbstractController
     /**
      * @Route("/category/{name}", name="show_category")
      *
+     * @param Category $categoryName
      * @return Response A response instance
      */
 
@@ -97,7 +129,10 @@ class BlogController extends AbstractController
 
         $articles = $categoryName->getArticles();
 
-        return $this->render('blog/category.html.twig', ['articles' => $articles, 'categoryName' => $categoryName]);
+        return $this->render('blog/category.html.twig', [
+            'articles' => $articles,
+            'categoryName' => $categoryName
+        ]);
 
     }
 
@@ -127,6 +162,16 @@ class BlogController extends AbstractController
         return $this->render('blog/category.html.twig', ['articles' => $articles]);
 
     }*/
+
+    /**
+     * @Route("/pages/{slug}", name="blog_pages", requirements={"slug"="[a-z0-9-]+"})
+     */
+    public function pages($slug = 'article-sans-titre')
+    {
+        $slug = ucwords(implode(' ', explode('-', $slug)));
+        return $this->render('blog/pages.html.twig', ['pages_slug' => $slug]);
+    }
+
 
 
 

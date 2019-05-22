@@ -75,6 +75,16 @@ Critères de validation n°9 : Le param converter.
         Dans blogController, la méthode showByCategory() permet de récupérer un objet Category via le param converter, à partir d'un name en paramètre de route,
     Dans showByCategory(), les articles associés à la categorie sont toujours récupérés par l’appel à $category->getArticles();,
     La méthode rend une vue affichant le nom de la catégorie et ses articles associés.
+    
+    
+Critères de validation n°10 : Gardez la "form"
+
+    La classe App\Form\CategoryType est présente dans le dossier src/Form.
+    La route /category affiche bien le formulaire de création de catégorie.
+    Le formulaire fonctionne (il crée une catégorie).
+    Ton code est présent sur le même dépot github que tes précédentes quêtes Symfony.
+
+
 
 
 

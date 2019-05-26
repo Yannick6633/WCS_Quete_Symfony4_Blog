@@ -83,6 +83,17 @@ Critères de validation n°10 : Gardez la "form"
     La route /category affiche bien le formulaire de création de catégorie.
     Le formulaire fonctionne (il crée une catégorie).
     Ton code est présent sur le même dépot github que tes précédentes quêtes Symfony.
+    
+
+Critères de validation n°11 : Générons du CRUD
+
+    Le CRUD est généré pour l’entité Article.
+    L’entité Article dispose des actions de lecture, écriture et suppression.
+    Les routes sont cohérentes et fonctionnelles.
+    Le CRUD agit bien avec la BDD (exemple : insérer un article depuis http://localhost:8000/article/new).
+    Le code est disponible sur un dépot GitHub.
+
+
 
 
 

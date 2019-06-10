@@ -92,6 +92,21 @@ Critères de validation n°11 : Générons du CRUD
     Les routes sont cohérentes et fonctionnelles.
     Le CRUD agit bien avec la BDD (exemple : insérer un article depuis http://localhost:8000/article/new).
     Le code est disponible sur un dépot GitHub.
+    
+    
+Critères de validation n°12 : Doctrine relations “Many-To-Many”
+
+
+    Ton code est disponible sur github,
+    Ton entité App\Entity\Tag est bien présente,
+    Ta classe de migration générant les 2 nouvelles tables et les contraintes d'intégrité fonctionnent,
+    La route vers la page de tag est fonctionnelle,
+    Sur la page du tag, la liste des articles associés s'affiche.
+    Sur la page des articles, la liste des tags associés s'affiche.
+    Bonus : Sur la page de tag, lors du clic sur un article de la liste, l'utilisateur est redirigé vers la page de l'article sélectionné.
+    Bonus II : Sur la page d'article, lors du clic sur un tag de la liste, l'utilisateur est redirigé vers la page du tag sélectionné.
+
+
 
 
 

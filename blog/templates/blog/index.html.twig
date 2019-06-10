@@ -5,24 +5,52 @@
 
 {% block body %}
 
+<div class="container">
     {{ form_start(form) }}
     {{ form_row(form.searchField) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn">{{ button_label|default('Search') }}</button>
     {{ form_end(form) }}
+</div>
 
-    <h1>All articles from article s table : </h1>
-    {% for article in articles %}
-        <div>
-            <h2>{{ loop.index }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
-            <p>{{ article.content }}</p>
-        </div>
-    {% else %}
-        Aucun article trouvé.
-    {% endfor %}
 
-    <a href="{{ path('app_index') }}" >
-        Back to homepage.
-    </a>
+    <div class="jumbotron">
+        <div class="text-center"><H1>All articles from article's table </H1></div>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
+
+
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Tags</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <th scope="row">{{ article.title }}</th>
+                <th scope="row">{{ article.content }}</th>
+                <td>
+                {% for tag in article.tags %}
+                    <p>{{ tag.name }}</p>
+                {% else %}
+                    <li>No tags for this article</li>
+                {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+    </div>
 
 
 

@@ -3,9 +3,15 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
 
-    <table class="table">
+    <div class="jumbotron">
+        <div class="text-center"><H1>Articles index</H1></div>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
+
+
+<div class="container">
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,5 +39,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('article_new') }}">Create new</a>
+</div>
 {% endblock %}

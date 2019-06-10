@@ -1,0 +1,36 @@
+{# templates/blog/tag_article.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <div class="text-center"><H1>Liste</H1></div>
+    <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+</div>
+
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Category</th>
+            <th scope="col">Title</th>
+            <th scope="col">Article</th>
+            <th scope="col">Tag</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        <tr>
+            <th scope="row">{{ article.id }}</th>
+            <td>{{ article.category.name }}</td>
+            <td><a href="{{ path('blog_show', {'slug': article.id}) }}">{{ article.title }}</a></td>
+            <td>{{ article.content }}</td>
+            <td>{{ tag.name }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

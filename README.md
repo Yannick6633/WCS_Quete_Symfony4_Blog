@@ -114,6 +114,19 @@ Critères de validation n°13 : EntityType
     Ce champ apparaît sous la forme de cases à cocher.
     Lorsque l’on ajoute un tag à un article, celui-ci est bien relié à l’article en BDD.
     Le tag s’affiche sur la page de l’article.
+    
+    
+Critères de validation n°14 : Les fixtures
+
+
+
+    Lorsque que php bin/console doctrine:fixtures:load est exécuté, il n y a pas de message d'erreur,
+    Les fixtures génèrent 50 articles répartis dans au moins 5 différentes catégories disponibles,
+    Les noms des catégories sont définis "à la main" dans la classe App\DataFixtures\CategoryFixtures,
+    Les titres et contenus des articles sont générés (et en minuscules) aléatoirement grâce à la librairie Faker dans la classe App\DataFixtures\ArticleFixtures,
+  
+
+
 
 
 

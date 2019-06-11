@@ -4,11 +4,27 @@
 
 {% block body %}
 
-    <div class="container">
-    <h1>Create new Article</h1>
-
-    {{ include('article/_form.html.twig') }}
-
-    <a href="{{ path('article_index') }}">back to list</a>
+    <div class="jumbotron">
+        <div class="text-center"><H1>Create new Article</H1></div>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
     </div>
+
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ include('article/_form.html.twig') }}</td>
+            </tr>
+            <td>
+                <a href="{{ path('article_index') }}">back to list</a>
+            </td>
+            </tbody>
+        </table>
+    </div>
+
 {% endblock %}

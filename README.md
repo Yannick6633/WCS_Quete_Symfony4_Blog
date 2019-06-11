@@ -105,6 +105,15 @@ Critères de validation n°12 : Doctrine relations “Many-To-Many”
     Sur la page des articles, la liste des tags associés s'affiche.
     Bonus : Sur la page de tag, lors du clic sur un article de la liste, l'utilisateur est redirigé vers la page de l'article sélectionné.
     Bonus II : Sur la page d'article, lors du clic sur un tag de la liste, l'utilisateur est redirigé vers la page du tag sélectionné.
+    
+
+Critères de validation n°13 : EntityType
+
+
+    Le formulaire d’ajout d’un article affiche un champ tags (EntityType),
+    Ce champ apparaît sous la forme de cases à cocher.
+    Lorsque l’on ajoute un tag à un article, celui-ci est bien relié à l’article en BDD.
+    Le tag s’affiche sur la page de l’article.
 
 
 

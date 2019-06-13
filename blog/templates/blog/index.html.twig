@@ -5,19 +5,19 @@
 
 {% block body %}
 
-<div class="container">
-    {{ form_start(form) }}
-    {{ form_row(form.searchField) }}
-    <button class="btn">{{ button_label|default('Search') }}</button>
-    {{ form_end(form) }}
-</div>
-
-
     <div class="jumbotron">
         <div class="text-center"><H1>All articles from article's table </H1></div>
         <a href="{{ path('app_index') }}">Retour à l'accueil</a>
     </div>
 
+    <div class="container">
+        <div class="row">
+            {{ form_start(form) }}
+            {{ form_row(form.searchField) }}
+            <button class="btn">{{ button_label|default('Search') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
 
     <div class="container">
         <table class="table table-dark">
@@ -25,29 +25,32 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
+                <th scope="col">Slug</th>
                 <th scope="col">Content</th>
+                <th scope="col">Category</th>
                 <th scope="col">Tags</th>
+
             </tr>
             </thead>
             <tbody>
             {% for article in articles %}
-            <tr>
-                <th scope="row">{{ loop.index }}</th>
-                <th scope="row">{{ article.title }}</th>
-                <th scope="row">{{ article.content }}</th>
-                <td>
-                {% for tag in article.tags %}
-                    <p>{{ tag.name }}</p>
-                {% else %}
-                    <li>No tags for this article</li>
-                {% endfor %}
-                </td>
-            </tr>
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <th scope="row">{{ article.title }}</th>
+                    <th scope="row">{{ article.slug }}</th>
+                    <th scope="row">{{ article.content }}</th>
+                    <th scope="row">{{ article.category.name }}</th>
+                    <td>
+                        {% for tag in article.tags %}
+                            <p>{{ tag.name }}</p>
+                        {% else %}
+                            <li>No tags for this article</li>
+                        {% endfor %}
+                    </td>
+                </tr>
             {% endfor %}
             </tbody>
         </table>
-
-
 
 
     </div>

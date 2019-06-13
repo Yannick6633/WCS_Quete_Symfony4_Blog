@@ -119,12 +119,24 @@ Critères de validation n°13 : EntityType
 Critères de validation n°14 : Les fixtures
 
 
-
     Lorsque que php bin/console doctrine:fixtures:load est exécuté, il n y a pas de message d'erreur,
     Les fixtures génèrent 50 articles répartis dans au moins 5 différentes catégories disponibles,
     Les noms des catégories sont définis "à la main" dans la classe App\DataFixtures\CategoryFixtures,
     Les titres et contenus des articles sont générés (et en minuscules) aléatoirement grâce à la librairie Faker dans la classe App\DataFixtures\ArticleFixtures,
   
+  
+Critères de validation n°15 : Introduction aux "Services"
+
+
+    Le service est appelé à chaque niveau de l’application où il y a un ajout/modification d'article.
+    Le service Slugify créé auparavant avec une méthode generate(), permet de générer un slug à partir d'une chaîne de caractères.
+    L'ajout de l'article : "PHPStorm, l'éditeur de code pour PHP à tester !" donne le slug "phpstorm-lediteur-de-code-pour-php-a-tester".
+    Le changement du titre de l'article précédent en "PHPStorm, l'éditeur de code pour PHP idéal !" donne "phpstorm-lediteur-de-code-pour-php-ideal".
+
+
+
+
+
 
 
 

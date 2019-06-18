@@ -1,0 +1,10 @@
+
+{% extends 'article/email/layout.html.twig' %}
+
+{% block body %}
+
+        <h1> L'article {{ article.title}} vient d'être ajouté au blog ! </h1>
+
+        <a href="{{ url('article_show',{'id':article.id}) }}">Voir l'article</a>
+
+{% endblock %}

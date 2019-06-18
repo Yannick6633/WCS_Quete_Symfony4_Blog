@@ -2,17 +2,25 @@
 
     <a class="navbar-brand" href="/">Mon Blog</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{ path('app_index') }}">Accueil <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{{ path('blog_index') }}">Articles</a>
-            <a class="nav-item nav-link" href="{{ path('article_index') }}">CRUD</a>
-            <a class="nav-item nav-link" href="{{ path('show_tag') }}">Tags</a>
-
-        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('blog_index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('category_index') }}">Catégories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('tag_index') }}">Tags</a>
+            </li>
+        </ul>
     </div>
 </nav>

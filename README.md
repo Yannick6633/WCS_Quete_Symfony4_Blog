@@ -134,6 +134,15 @@ Critères de validation n°15 : Introduction aux "Services"
     Le changement du titre de l'article précédent en "PHPStorm, l'éditeur de code pour PHP idéal !" donne "phpstorm-lediteur-de-code-pour-php-ideal".
 
 
+Critères de validation n°16 : Envoi d'E-mail
+
+
+
+    Le mail du destinataire (administrateur) est issue d'une variable d'environnement,
+    Le contenu des mails envoyés reprend l'apparence générale de l'application, à l'aide d'un layout de mail général et se trouve dans une vue Twig, exemple : templates/Article/email/notification.html.twig.
+    Le contenu du mail indique le titre du nouvel article publié, ainsi qu'un lien vers le nouvel article.
+    Ton code est disponible sur un dépot GitHub.
+
 
 
 

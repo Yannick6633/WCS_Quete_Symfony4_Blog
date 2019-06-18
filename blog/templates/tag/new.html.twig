@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tag{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="text-center"><H1>Create new Tag</H1></div>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
+
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ include('tag/_form.html.twig') }}</td>
+            </tr>
+            <td>
+                <a href="{{ path('tag_index') }}">back to list</a>
+            </td>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

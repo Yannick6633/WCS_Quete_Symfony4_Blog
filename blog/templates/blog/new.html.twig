@@ -1,13 +1,44 @@
 {# templates/blog/new.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter Category{% endblock %}
+{% block title %}Category{% endblock %}
+
+
 
 {% block body %}
+    <div class="jumbotron">
+        <div class="text-center"><H1>Ajouter une nouvelle catégorie </H1></div>
+        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+    </div>
 
-    {{ form_start(form) }}
+    <div class="container">
+        <div class="row">
+        {{ form_start(form) }}
         {{ form_row(form.name) }}
-        <button class="btn">{{ button_labe |default('Save') }}</button>
-    {{ form_end(form) }}
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+        </div>
 
+        {% for message in app.flashes('success') %}
+            <h4> {{ message }} </h4>
+        {% endfor %}
+
+        <h3>Les catégories </h3>
+
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in category %}
+                <td>{{ category.id }}</td>
+                <td><a href="{{ path('blog_category',{'name':category.name}) }}">{{ category.name }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

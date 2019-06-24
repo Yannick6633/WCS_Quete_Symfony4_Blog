@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/swiftmailer-bundle": "^3.2"
+        "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/security-bundle": "^4.3"
     }
 }

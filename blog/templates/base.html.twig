@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
 
 
+    <title>{% block title %}Tata Yvonne {% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-                {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-
-    <body>
-        <header>
-            {% include 'navbar.html.twig' %}
-        </header>
+<body>
+<header>
+    {% include 'navbar.html.twig' %}
+    {% include 'login.html.twig' %}
+</header>
 
 
-        {% block body %}<div class="jumbotron">
-            <div class="text-center"><H1>Bienvenue chez Tata Yvonne !</H1></div>
+{% block body %}
+    <div class="jumbotron">
+        <div class="text-center"><H1>Tata Yvonne votre disquaire indépendant</H1></div>
+    </div>
+    <section>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/aaaa_42.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/sleaford mods.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
             </div>
+        </div>
+    </section>
 
+{% endblock %}
 
-        {% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
 
-        {% block javascripts %}
-                {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-
-    </body>
+</body>
 
 </html>

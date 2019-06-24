@@ -144,6 +144,16 @@ Critères de validation n°16 : Envoi d'E-mail
     Ton code est disponible sur un dépot GitHub.
 
 
+Critères de validation n°17.1 : Gestion des Utilisateurs
+
+
+
+    le formulaire de login est fonctionnel,
+    le lien de déconnexion est fonctionnel,
+    lorsque tu crées un article, l’auteur actuellement connecté est bien associé en base de données à l’article,
+    le dépôt est disponible sur github.
+
+
 
 
 

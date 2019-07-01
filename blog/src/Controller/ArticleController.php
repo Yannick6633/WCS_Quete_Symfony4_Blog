@@ -41,8 +41,9 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $article->setSlug($slugify->generate($article->getTitle()));
             $entityManager = $this->getDoctrine()->getManager();
+            $article->setSlug($slugify->generate($article->getTitle()));
+
 
             $author = $this->getUser();
             $article->setAuthor($author);
@@ -84,11 +85,17 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Article $article
+     * @param Slugify $slugify
+     * @return Response
      */
     public function edit(Request $request, Article $article, Slugify $slugify): Response
     {
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
+        if ($this->isGranted('ROLE_ADMIN') or ($article->getAuthor() === $this->getUser()))
 
         if ($form->isSubmitted() && $form->isValid()) {
             $article->setSlug($slugify->generate($article->getTitle()));

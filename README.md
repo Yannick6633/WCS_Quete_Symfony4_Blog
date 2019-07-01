@@ -127,7 +127,6 @@ Critères de validation n°14 : Les fixtures
   
 Critères de validation n°15 : Introduction aux "Services"
 
-
     Le service est appelé à chaque niveau de l’application où il y a un ajout/modification d'article.
     Le service Slugify créé auparavant avec une méthode generate(), permet de générer un slug à partir d'une chaîne de caractères.
     L'ajout de l'article : "PHPStorm, l'éditeur de code pour PHP à tester !" donne le slug "phpstorm-lediteur-de-code-pour-php-a-tester".
@@ -135,8 +134,6 @@ Critères de validation n°15 : Introduction aux "Services"
 
 
 Critères de validation n°16 : Envoi d'E-mail
-
-
 
     Le mail du destinataire (administrateur) est issue d'une variable d'environnement,
     Le contenu des mails envoyés reprend l'apparence générale de l'application, à l'aide d'un layout de mail général et se trouve dans une vue Twig, exemple : templates/Article/email/notification.html.twig.
@@ -146,14 +143,18 @@ Critères de validation n°16 : Envoi d'E-mail
 
 Critères de validation n°17.1 : Gestion des Utilisateurs
 
-
-
     le formulaire de login est fonctionnel,
     le lien de déconnexion est fonctionnel,
     lorsque tu crées un article, l’auteur actuellement connecté est bien associé en base de données à l’article,
     le dépôt est disponible sur github.
 
+Critères de validation n°17.2 : Sécurisons nos routes.
 
+
+    Le fichier security.yaml est configuré correctement avec une gestion de la hiérarchie et des chemins sécurisés.
+    Un utilisateur reconnu comme "anonymous" ne peut accéder qu'au listing des articles.
+    Un utilisateur reconnu comme "auteur" peut accéder au CRUD des articles, mais ne peut pas modifier un article dont il n'est pas l'auteur.
+    Un utilisateur reconnu comme "administrateur" peut accéder à l'ensemble du site, dont la modification de tous les articles, la création de catégories, ainsi que des tags.
 
 
 

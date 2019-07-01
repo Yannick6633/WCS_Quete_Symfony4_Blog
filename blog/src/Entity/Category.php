@@ -5,36 +5,41 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  */
 class Category
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-
-    private $name;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
-     */
-
-    private $articles;
 
     public function __construct()
     {
         $this->articles = new ArrayCollection();
     }
+
+
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
+     * elle ne devrait pas dépasser {{ limit }} caractères")
+     */
+    private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
+     */
+    private $articles;
+
+
 
     /**
      * @return Collection|Article[]

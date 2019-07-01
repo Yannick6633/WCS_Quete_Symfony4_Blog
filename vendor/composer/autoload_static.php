@@ -8,9 +8,9 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -25,8 +25,10 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Security\\Http\\' => 32,
             'Symfony\\Component\\Security\\Guard\\' => 33,
             'Symfony\\Component\\Security\\Csrf\\' => 32,
@@ -56,6 +58,7 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
         ),
     );
 
@@ -84,6 +87,10 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
@@ -91,6 +98,10 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
         'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
+        ),
+        'Symfony\\Component\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/validator',
         ),
         'Symfony\\Component\\Security\\Http\\' => 
         array (
@@ -171,6 +182,10 @@ class ComposerStaticInitc798c9efa4aa9f1ae5bec1bdb05edc39
         'Doctrine\\Common\\Lexer\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
     );
 

@@ -1,6 +1,8 @@
 {
     "require": {
         "symfony/swiftmailer-bundle": "^3.2",
-        "symfony/security-bundle": "^4.3"
+        "symfony/security-bundle": "^4.3",
+        "symfony/validator": "^4.3",
+        "doctrine/annotations": "^1.6"
     }
 }

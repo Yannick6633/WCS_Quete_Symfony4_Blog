@@ -12,8 +12,10 @@ return array(
     'Symfony\\Polyfill\\Intl\\Idn\\' => array($vendorDir . '/symfony/polyfill-intl-idn'),
     'Symfony\\Polyfill\\Iconv\\' => array($vendorDir . '/symfony/polyfill-iconv'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Symfony\\Contracts\\Translation\\' => array($vendorDir . '/symfony/translation-contracts'),
     'Symfony\\Contracts\\Service\\' => array($vendorDir . '/symfony/service-contracts'),
     'Symfony\\Contracts\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher-contracts'),
+    'Symfony\\Component\\Validator\\' => array($vendorDir . '/symfony/validator'),
     'Symfony\\Component\\Security\\Http\\' => array($vendorDir . '/symfony/security-http'),
     'Symfony\\Component\\Security\\Guard\\' => array($vendorDir . '/symfony/security-guard'),
     'Symfony\\Component\\Security\\Csrf\\' => array($vendorDir . '/symfony/security-csrf'),
@@ -34,4 +36,5 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/EmailValidator'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),
+    'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations'),
 );

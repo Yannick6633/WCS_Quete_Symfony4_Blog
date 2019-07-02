@@ -17,6 +17,14 @@
     {% include 'login.html.twig' %}
 </header>
 
+{% for category, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
 {% block body %}
     <div class="jumbotron">
         <div class="text-center"><H1>Tata Yvonne votre disquaire indépendant</H1>

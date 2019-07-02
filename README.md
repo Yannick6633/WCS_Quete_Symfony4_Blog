@@ -175,6 +175,13 @@ Critères de validation n°19 : Requêtes personnalisées.
     Si un article n’a aucun tag, il doit pouvoir apparaître dans la liste
     Ton code est disponible sur Github
 
+Critères de validation n°20 : Sessions et messages flash.
+
+
+    L’affichage des messages flash est correctement configuré dans le fichier base.html.twig
+    L’ajout et l’édition d’un article, catégorie ou tag affichent un message flash vert (reprenant le style de la classe “alert-success” de Bootstrap) pour confirmer la réussite de la modification.
+    La suppression d’un article, catégorie ou tag affiche un message flash rouge (reprenant le style de la classe “alert-danger” de Bootstrap) pour confirmer la réussite de la suppression.
+
 
 
 

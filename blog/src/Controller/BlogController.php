@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
 /**
@@ -29,9 +30,15 @@ class BlogController extends AbstractController
      * @return Response A response instance
      */
 
-    public function index(Request $request): Response
+    public function index(Request $request, SessionInterface $session): Response
     {
 
+        if (!$session->has('total')) {
+            $session->set('total', 0); // if total doesn’t exist in session, it is initialized.
+        }
+
+        $total = $session->get('total'); // get actual value in session with ‘total' key.
+        // ...
 
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
@@ -71,6 +78,8 @@ class BlogController extends AbstractController
                 'formCategory' => $formCategory->createView(),
             ]
         );
+
+
     }
 
     /**

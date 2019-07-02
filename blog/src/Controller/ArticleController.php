@@ -64,6 +64,8 @@ class ArticleController extends AbstractController
 
         $mailer->send($message);
 
+        $this->addFlash('success', 'Nouvel article enregistré');
+
         return $this->redirectToRoute('article_index');
         }
 
@@ -101,6 +103,8 @@ class ArticleController extends AbstractController
             $article->setSlug($slugify->generate($article->getTitle()));
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Edition enregistrée');
+
             return $this->redirectToRoute('article_index', [
                 'id' => $article->getId(),
             ]);
@@ -121,6 +125,8 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
+
+            $this->addFlash('danger', 'Suppression effectuée');
         }
 
         return $this->redirectToRoute('article_index');

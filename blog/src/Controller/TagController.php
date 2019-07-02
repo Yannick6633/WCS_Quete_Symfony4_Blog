@@ -42,7 +42,12 @@ class TagController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($tag);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Tag enregistrée');
+
             return $this->redirectToRoute('tag_index');
+
+
         }
         return $this->render('tag/new.html.twig', [
             'tag' => $tag,
@@ -69,9 +74,14 @@ class TagController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'Edition enregistrée');
+
             return $this->redirectToRoute('tag_index', [
                 'id' => $tag->getId(),
             ]);
+
+
         }
         return $this->render('tag/edit.html.twig', [
             'tag' => $tag,
@@ -87,6 +97,8 @@ class TagController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tag);
             $entityManager->flush();
+
+            $this->addFlash('danger', 'Suppression effectuée');
         }
         return $this->redirectToRoute('tag_index');
     }

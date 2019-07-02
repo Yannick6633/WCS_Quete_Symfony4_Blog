@@ -166,6 +166,14 @@ Critères de validation n°18 : Validations.
     Une erreur appropriée apparaît au niveau de ton formulaire si un contenu d’article vide est envoyé au serveur.
     Si le content de l’article contient le mot “digital”, le message d’erreur “en français, il faut dire numérique” apparaît à la place.
 
+Critères de validation n°19 : Requêtes personnalisées.
+
+
+    La requête de récupération des articles ainsi que de leurs tags doit être écrite à l’aide du QueryBuilder ou de DQL
+    Une seule requête doit être effectuée en base de données pour afficher la liste des articles
+    La liste des articles doit comporter une colonne contenant le nom tags liés à un article
+    Si un article n’a aucun tag, il doit pouvoir apparaître dans la liste
+    Ton code est disponible sur Github
 
 
 

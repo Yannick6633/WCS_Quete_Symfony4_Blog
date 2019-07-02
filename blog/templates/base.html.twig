@@ -11,17 +11,22 @@
 </head>
 
 <body>
+
 <header>
     {% include 'navbar.html.twig' %}
     {% include 'login.html.twig' %}
 </header>
 
-
 {% block body %}
     <div class="jumbotron">
-        <div class="text-center"><H1>Tata Yvonne votre disquaire indépendant</H1></div>
+        <div class="text-center"><H1>Tata Yvonne votre disquaire indépendant</H1>
+            <div class="text-center"><h2>VINYLES, CD, NEUFS & OCCASIONS</h2>
+            </div>
+        </div>
+        <hr>
     </div>
-    <section>
+
+    <div class="container">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -35,7 +40,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+
 
 {% endblock %}
 

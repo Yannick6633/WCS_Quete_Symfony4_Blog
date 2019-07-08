@@ -22,8 +22,10 @@ class ArticleController extends AbstractController
      */
     public function index(ArticleRepository $articleRepository): Response
     {
+
+
         return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAllWithCategories(),
+            'articles' => $articleRepository->findAllWithCategoriesAndTags(),
         ]);
     }
 
@@ -42,7 +44,9 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $article->setSlug($slugify->generate($article->getTitle()));
+
+           $slug = $slugify->generate($article->getTitle());
+           $article->setSlug($slug);
 
 
             $author = $this->getUser();

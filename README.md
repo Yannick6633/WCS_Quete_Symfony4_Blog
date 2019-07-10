@@ -183,6 +183,14 @@ Critères de validation n°20 : Sessions et messages flash.
     La suppression d’un article, catégorie ou tag affiche un message flash rouge (reprenant le style de la classe “alert-danger” de Bootstrap) pour confirmer la réussite de la suppression.
 
 
+Critères de validation n°21 : Ajax et favoris
+
+
+    L'ajout en favoris sur la page de détail fonctionne,
+    La page ne se recharge pas lors du clique sur le coeur,
+    Si la page est rafraîchie manuellement, le coeur garde son état plein/vide,
+    Ton code est disponible sur ton dépôt Github habituel.
+
 
 
 

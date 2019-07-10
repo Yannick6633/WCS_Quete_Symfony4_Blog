@@ -24,6 +24,7 @@
             </thead>
             <tbody>
             {% for article in articles %}
+
                 <tr>
                     <td>{{ article.id }}</td>
                     <td>{{ article.title }}</td>
@@ -41,6 +42,7 @@
                             <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
                         {% endif %}
                     </td>
+
                 </tr>
 
             {% else %}
@@ -53,4 +55,5 @@
 
         <a class="btn btn-primary" href="{{ path('article_new') }}">Create new</a>
     </div>
+
 {% endblock %}

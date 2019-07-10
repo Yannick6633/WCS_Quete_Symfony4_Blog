@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -42,9 +44,15 @@ class User implements UserInterface
      */
     private $Aticles;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Article", inversedBy="userFavorites")
+     */
+    private $favorites;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -130,10 +138,63 @@ class User implements UserInterface
         return $this->Aticles;
     }
 
+    /**
+     * @param string $Aticles
+     * @return User
+     */
     public function setAticles(string $Aticles): self
     {
         $this->Aticles = $Aticles;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getFavorites(): Collection
+    {
+        return $this->favorites;
+    }
+
+    /**
+     * @param Article $favorite
+     * @return User
+     */
+    public function addFavorite(Article $favorite): self
+    {
+        if (!$this->favorites->contains($favorite)) {
+            $this->favorites[] = $favorite;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Article $favorite
+     * @return User
+     */
+    public function removeFavorite(Article $favorite): self
+    {
+        if ($this->favorites->contains($favorite)) {
+            $this->favorites->removeElement($favorite);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param Article $article
+     * @return bool
+     */
+    public function isFavorite(Article $article)
+    {
+       if ($this->favorites->contains($article)) {
+           $favorites = true;
+       }else {
+           $favorites = false;
+       }
+
+       return $favorites;
     }
 }

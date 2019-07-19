@@ -7,17 +7,13 @@
 
     {{ app.session.get('total') }}
 
-    <div class="jumbotron">
+
         <div class="row">
             {{ form_start(form) }}
             {{ form_row(form.searchField) }}
             <button class="btn btn-secondary">{{ button_label|default('Search') }}</button>
             {{ form_end(form) }}
         </div>
-        <div class="text-center"><H1>TOUS LES VINYLES </H1></div>
-        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
-        <hr>
-    </div>
 
     <div class="container">
         <div class="row">
@@ -34,7 +30,6 @@
                             {% else %}
                                 <p>Pas de tags pour cet article</p>
                             {% endfor %}
-
                         </div>
                     </div>
                 </div>
@@ -69,8 +64,6 @@
             </ul>
         </div>
     </div>
-
-
 
 
 {% endblock %}

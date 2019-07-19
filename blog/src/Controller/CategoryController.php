@@ -13,14 +13,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/category")
+ * @Route({
+ *     "fr": "/categorie",
+ *     "en": "/category",
+ *     "es": "/categoria",
+ *     })
  * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_AUTHOR')")
  */
 
 class CategoryController extends AbstractController
 {
     /**
-     * @Route("/", name="category_index", methods={"GET"})
+     * @Route({
+     *     "fr": "/liste",
+     *     "en": "/list",
+     *     "es": "lista",
+     *     }, name="category_index", methods={"GET"})
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
@@ -111,7 +119,11 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("Category", name="add_category")
+     * @Route({
+     *     "fr": "/ajout",
+     *     "en": "/new",
+     *     "es": "/crear",
+     *     }, name="add_category")
      * @return Response A response instance
      * @IsGranted("ROLE_ADMIN")
      */

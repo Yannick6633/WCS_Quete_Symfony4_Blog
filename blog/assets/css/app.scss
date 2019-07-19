@@ -2,7 +2,7 @@
 
 body {
 
-    background-color: lightgrey;
+    background-color: olive;
 }
 
 h1 {
@@ -10,13 +10,20 @@ h1 {
     text-align: center;
 }
 
-.primary{
-
-    background-color: #e0a800;
-}
-
-
 button {
     background-color: #e0a800;
 }
 
+.jumbotron {
+
+    background-color: steelblue;
+}
+
+.titre, .sous_titre {
+    color: darkkhaki;
+}
+
+#footer {
+
+    background-color: #1b1e21;
+}

@@ -30,8 +30,8 @@ security:
     access_control:
         #- { path: ^/admin, roles: ROLE_ADMIN }
         #- { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/article, roles: ROLE_AUTHOR }
-        - { path: ^/tag, roles: ROLE_AUTHOR }
+        - { path: ^/(fr|en|es)/article, roles: ROLE_AUTHOR }
+        - { path: ^/(fr|en|es)/tag, roles: ROLE_AUTHOR }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
           # activate different ways to authenticate
 
@@ -45,5 +45,6 @@ security:
     # Note: Only the *first* access control that matches will be used
 
     role_hierarchy:
-        ROLE_AUTHOR: ROLE_USER
         ROLE_ADMIN: ROLE_AUTHOR
+        ROLE_AUTHOR: ROLE_USER
+

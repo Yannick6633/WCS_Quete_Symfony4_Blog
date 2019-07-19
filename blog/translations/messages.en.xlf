@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Hello English</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="xGtv1X8" resname="Langage">
+        <source>Langage</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="yAxzhhm" resname="article.list">
+        <source>article.list</source>
+        <target>Articles list</target>
+      </trans-unit>
+      <trans-unit id="hjERhIW" resname="category.add">
+        <source>category.add</source>
+        <target>Add a category</target>
+      </trans-unit>
+      <trans-unit id="nfw.zVe" resname="category.list">
+        <source>category.list</source>
+        <target>Categories list</target>
+      </trans-unit>
+      <trans-unit id="zM7rVV1" resname="accueil">
+        <source>accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="W12cLaV" resname="article.edit">
+        <source>article.edit</source>
+        <target>Edit Article</target>
+      </trans-unit>
+      <trans-unit id="Q.R2GhV" resname="retour.list">
+        <source>retour.list</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="fp5aww8" resname="add">
+        <source>add</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit id="qvIyBkY" resname="title">
+        <source>title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="7XACtDn" resname="content">
+        <source>content</source>
+        <target>content</target>
+      </trans-unit>
+      <trans-unit id="DVXDi5N" resname="voir">
+        <source>voir</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="ARmG8Ow" resname="article.add">
+        <source>article.add</source>
+        <target>Add Article</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="WL11PFJ" resname="categories.list">
+        <source>categories.list</source>
+        <target>Categories list</target>
+      </trans-unit>
+      <trans-unit id="vqXtcdq" resname="Bienvenue sur la page d'accueil">
+        <source>Bienvenue sur la page d'accueil</source>
+        <target>Welcome</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

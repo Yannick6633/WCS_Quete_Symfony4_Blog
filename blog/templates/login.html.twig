@@ -1,8 +1,18 @@
 <div class="container">
-    <p>{% if app.user %}
-            Bonjour {{ app.user.email }} !
-            <a href="{{ path('app_logout') }}"> Se déconnecter</a>
-        {% else %}
-            <a href="{{ path('app_login') }}"> Se connecter</a>
-        {% endif %}</p>
+    <div class="row">
+        <div class="col">
+            {% if app.user %}
+                {% trans with {'%username%': app.user.email} %}
+                    hello_username
+                {% endtrans %} !
+                <a class="btn btn-link btn-sm" href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }} <i
+                            class="fas fa-user"></i></a>
+            {% else %}
+                <a class="btn btn-link btn-sm" href="{{ path('app_login') }}"> {{ 'account.login'|trans }} <i
+                            class="fas fa-user"></i></a>
+            {% endif %}
+        </div>
+    </div>
 </div>
+
+

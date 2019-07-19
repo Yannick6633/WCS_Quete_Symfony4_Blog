@@ -1,23 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
+{% block body %}
 
-    <h1>Bienvenue sur mon blog</h1>
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/platine-vinyle.jpg" class="d-block w-100" style="width: 1626px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="titre"><h1>La Passion des Vinyles</h1></div>
+                        <div class="sous_titre"><h2>le plaisir des craquement du diamant sur les sillons</h2></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/casstte_tapes.jpg" class="d-block w-100" style="width: 1626px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="titre"><h1>La Passion des cassettes</h1></div>
+                        <div class="sous_titre"><h2>Pour les nostalgiques de la bande audio</h2></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/casstte_tapes.jpg" class="d-block w-100" style="width: 1626px;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
 
-
-    <a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
-        Testing show() method from BlogController with a real article s slug.
-    </a>
-    <br>
-    <a href="{{ path('blog_index') }}">
-        Testing index() method from BlogController to view all articles.
-    </a>
-    <br>
-    <a href="{{ path('show_category', {'name': "javascript"}) }}">
-        Testing showByCategory() method from BlogController to view 3 articles.
-    </a>
-    <br>
-
-
+    <footer>
+        {% include 'footer.html.twig' %}
+    </footer>
 {% endblock %}
+

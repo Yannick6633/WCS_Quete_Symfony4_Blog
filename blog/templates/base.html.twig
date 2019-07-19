@@ -9,12 +9,11 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-
 <body>
+
 
 <header>
     {% include 'navbar.html.twig' %}
-    {% include 'login.html.twig' %}
 </header>
 
 {% for category, messages in app.flashes %}
@@ -25,42 +24,21 @@
     {% endfor %}
 {% endfor %}
 
-{% block body %}
-    <div class="jumbotron">
-        <div class="text-center"><H1>Tata Yvonne votre disquaire indépendant</H1>
-            <div class="text-center"><h2>VINYLES, CD, NEUFS & OCCASIONS</h2>
-            </div>
-        </div>
-        <hr>
-    </div>
-
-    <div class="container">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/red-fang.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/sleaford-mods.jpeg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/amelie-lens.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-{% endblock %}
+{% block body %}{% endblock %}
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
     <script src="https://kit.fontawesome.com/f62deca48c.js"></script>
+
 {% endblock %}
 
 
-
 </body>
+
+
+
+
+</footer>
+
 
 </html>

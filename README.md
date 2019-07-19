@@ -192,6 +192,16 @@ Critères de validation n°21 : Ajax et favoris
     Ton code est disponible sur ton dépôt Github habituel.
 
 
+Critères de validation n°22 : Internationalisation
+
+
+    Un menu déroulant (via bootstrap) permet de choisir entre anglais, français, et espagnol.
+    Le texte s’affiche différemment en fonction de la langue sélectionnée.
+    Toutes les URLs correspondent à localhost:8000/fr/suite_de_l_url, localhost:8000/en/suite_de_l_url, localhost:8000/es/suite_de_l_url en fonction de la langue choisie.
+    Les routes blog/category/new, blog/categoria/crear et blog/categorie/ajout sont toutes les trois disponibles.
+    Ton code est disponible sur github sur le dépot habituel.
+
+
 
 
 

@@ -5,13 +5,30 @@
 {% block body %}
 
 
-    <div class="jumbotron">
-        <div class="text-center"><H1>Article</H1></div>
-        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
-    </div>
+    <H1>Article</H1>
+
 
 
     <div class="container">
+
+        <table class="table table-dark">
+            <tbody>
+            <tr>
+                <td>
+                    <a class="btn btn-warning" href="{{ path('article_index') }}">back to list</a>
+                </td>
+                <td>
+                    {% if is_granted('ROLE_AUTHOR') %}
+                        <a class="btn btn-outline-light btn-sm" href="{{ path('article_edit', {'id': article.id}) }}"><i
+                                    class="far fa-edit"></i></a>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ include('article/_delete_form.html.twig') }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
         <table class="table table-dark">
             <thead>
             <tr>
@@ -26,31 +43,13 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
                 <td>
-                <a onclick="addToFavorite()">{{ isFavorite ? '<i id="favorite" class="fas fa-heart"></i>' :
-                    '<i id="favorite" class="far fa-heart"></i>' }}</a>
+                    <a onclick="addToFavorite()">{{ isFavorite ? '<i id="favorite" class="fas fa-heart"></i>' :
+                        '<i id="favorite" class="far fa-heart"></i>' }}</a>
                 </td>
             </tr>
             </tbody>
         </table>
-        <table class="table table-dark">
-            <tbody>
-            <tr>
-                <td>
-                    <a class="btn btn-warning" href="{{ path('article_index') }}">back to list</a>
-                </td>
-                <td>
-                    {% if is_granted('ROLE_AUTHOR') %}
-                <a class="btn btn-success" href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-                    {% endif %}
-                </td>
-                <td>
-                {{ include('article/_delete_form.html.twig') }}
-                </td>
-                <td>
 
-            </tr>
-            </tbody>
-        </table>
     </div>
     <script>
         function addToFavorite() {
@@ -61,8 +60,7 @@
                     if (json.isFavorite) {
                         favoriteElt.classList.remove('far');
                         favoriteElt.classList.add('fas');
-                    }
-                    else {
+                    } else {
                         favoriteElt.classList.remove('fas');
                         favoriteElt.classList.add('far');
                     }

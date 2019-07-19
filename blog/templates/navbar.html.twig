@@ -1,6 +1,16 @@
+<nav class="navbar navbar-dark bg-dark">
+    {% include 'login.html.twig' %}
+</nav>
+
+<div class="jumbotron">
+    <div class="titre"><H1>Tata Yvonne disquaire indépendant</H1></div>
+</div>
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="/">La Devanture</a>
+    <a class="navbar-brand" href="/">HOME</a>
 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
@@ -8,10 +18,14 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ path('blog_index') }}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('blog_index') }}">VINYLE <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('blog_index') }}">K7 AUDIO <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('article_index') }}">Articles</a>
@@ -24,4 +38,20 @@
             </li>
         </ul>
     </div>
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Langue
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="/fr">FRANCAIS</a>
+                <a class="dropdown-item" href="/en">ANGLAIS</a>
+                <a class="dropdown-item" href="/es">ESPAGNOL</a>
+            </div>
+    </div>
+
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    </form>
 </nav>

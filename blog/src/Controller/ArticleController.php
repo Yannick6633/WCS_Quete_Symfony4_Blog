@@ -13,7 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Slugify;
 
 /**
- * @Route("/article")
+ * @Route({
+ *     "fr": "/article",
+ *     "en": "/article",
+ *     "es": "/artículo",
+ *     })
  */
 
 class ArticleController extends AbstractController
@@ -31,7 +35,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/ajouter",
+     *     "en": "/new",
+     *     "es": "/nuevo",
+     *     }, name="article_new", methods={"GET","POST"})
      * @param Request $request
      * @param Slugify $slugify
      * @param \Swift_Mailer $mailer
@@ -93,7 +101,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/{id}/editer",
+     *     "en": "/{id}/edit",
+     *     "es": "/{id}/editar",
+     *     }, name="article_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Article $article
      * @param Slugify $slugify
@@ -140,7 +152,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/favorite", name="article_favorite", methods={"GET", "POST"})
+     * @Route({
+     *     "fr": "/{id}/favoris",
+     *     "en": "/{id}/favorites",
+     *     "es": "/{id}/favoritos",
+     *     }, name="article_favorite", methods={"GET", "POST"})
      */
     public function favorite(Request $request, Article $article, ObjectManager $manager) : Response
     {

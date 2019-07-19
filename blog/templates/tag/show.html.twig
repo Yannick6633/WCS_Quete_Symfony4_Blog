@@ -6,11 +6,24 @@
 
 {% block body %}
 
-    <div class="jumbotron">
-        <div class="text-center"><H1>Tag</H1></div>
-        <a href="{{ path('app_index') }}">Retour à l'accueil</a>
-    </div>
+    <H1>Tag</H1>
+
     <div class="container">
+        <table class="table table-dark">
+            <tbody>
+            <tr>
+                <td>
+                    <a class="btn btn-outline-warning" href="{{ path('tag_index') }}">back to list</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="{{ path('tag_edit', {'id': tag.id}) }}">edit</a>
+                </td>
+                <td>
+                    {{ include('tag/_delete_form.html.twig') }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
         <table class="table table-dark">
             <thead>
             <tr>
@@ -22,16 +35,10 @@
             <tr>
                 <td>{{ tag.id }}</td>
                 <td>{{ tag.name }}</td>
-
             </tr>
             </tbody>
         </table>
 
-        <a class="btn btn-warning" href="{{ path('tag_index') }}">back to list</a>
-
-        <a class="btn btn-success" href="{{ path('tag_edit', {'id': tag.id}) }}">edit</a>
-
-        {{ include('tag/_delete_form.html.twig') }}
     </div>
 
 
